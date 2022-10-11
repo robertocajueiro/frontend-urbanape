@@ -16,10 +16,16 @@ export class UsuariosService {
     return this.http.post<Usuario>('http://localhost:8080/usuarios', usuario);
   }
 
-  getUsuario() : Usuario{
-    let usuario: Usuario = new Usuario();
-    usuario.nome = 'Fulano de Tal'
-    usuario.email = 'fulano@localhost'
-    return usuario;
+/*   getUsuarios() : Observable<Usuario[]> {
+    return null;
+  } */
+
+  getUsuarios() : Usuario[] {
+    let usuario = new Usuario();
+    usuario.id = 1;
+    usuario.nome = 'Lucas Batista';
+    usuario.email = 'lucas@localhost.com';
+    usuario.dataCadastro = '11/10/2022';
+    return [usuario]
   }
 }
