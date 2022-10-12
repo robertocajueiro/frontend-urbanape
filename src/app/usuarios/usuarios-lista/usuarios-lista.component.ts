@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from '../usuario';
 import { UsuariosService } from '../../usuarios.service';
 
@@ -11,14 +12,21 @@ export class UsuariosListaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
 
-  constructor( private service : UsuariosService) {
+  constructor( private service : UsuariosService, private router: Router) {
 
   }
 
   ngOnInit(): void {
     this.service
       .getUsuarios()
-      .subscribe( resposta => this.usuarios = resposta);
+      .subscribe( resposta => {
+        console.log(this.usuarios)
+        this.usuarios = resposta;
+    });
+  }
+
+  novoCadastro(){
+    this.router.navigate(['/usuarios-form'])
   }
 
 }
