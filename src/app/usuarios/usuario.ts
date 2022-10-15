@@ -4,8 +4,5 @@ export class Usuario {
   nome!: string;
   email!: string
   senha!: string;
-  cartao!: [];
-  numeroCartao!: string;
-  status!: boolean;
-  tipoCartao!: String;
+  cartao!: number;
 }

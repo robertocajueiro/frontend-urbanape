@@ -18,6 +18,7 @@
               <th>ID</th>
               <th>Nome</th>
               <th>E-mail</th>
+              <th>Cartão</th>
               <th>Ação</th>
             </tr>
           </thead>
@@ -26,21 +27,7 @@
                 <td>{{ usuario.id }}</td>
                 <td>{{ usuario.nome }}</td>
                 <td>{{ usuario.email }}</td>
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">cartao</button>
-
-                  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                  aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                      ...
-                      </div>
-                    </div>
-                  </div>
-
-
-
-
+                <td>{{ usuario.cartao | json }}</td>
 
 
 

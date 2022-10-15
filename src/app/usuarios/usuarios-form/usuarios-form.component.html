@@ -49,14 +49,60 @@
           </div>
         </div>
       </div>
+      <hr>
+
+
 
       <div class="row">
-        <div class="col-md-3">
+
+        <div class="col-md-1">
+          <div class="form-group">
+            <label>Id:</label>
+            <input type="text" class="form-control" [ngModel]="cartao.id_cartao" name="id_cartao" disabled="true">
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-4">
+          <label>Tipo Cartão:</label>
+          <select class="form-control" >
+            <option [(ngModel)]="cartao.tipoCartao" name="tipoCartao"
+              selected>Selecione...</option>
+            <option>COMUM</option>
+            <option>ESTUDANTE</option>
+            <option>TRABALHADOR</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>Cartão:</label>
+            <input type="text" class="form-control" [(ngModel)]="cartao.numeroCartao" name="numeroCartao">
+          </div>
+        </div>
+
+        <div class="col-md-1 form-check form-check-inline" [(ngModel)]="cartao.status" name="status">
+          <input class="form-check-input" type="radio" value="1">
+          <label class="form-check-label">Ativo</label>
+        </div>
+
+        <div class=" col-md-1 form-check form-check-inline">
+          <input class="form-check-input" type="radio">
+          <label class="form-check-label">Inativo</label>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="col-md-4">
           <button type="submit" class="btn btn-success">
-              <i class="fa fa-save"></i> Salvar
+            <i class="fa fa-save"></i> Salvar
           </button>
 
-          <button type="submit" class="btn btn-danger ml-1" (click)="voltarParaListagem()">
+          <button type="submit" class="btn btn-info ml-1" (click)="voltarParaListagem()">
               <i class="fa fa-arrow-alt-circle-left"></i> Voltar
            </button>
         </div>

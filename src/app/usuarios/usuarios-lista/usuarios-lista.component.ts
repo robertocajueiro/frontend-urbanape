@@ -10,7 +10,7 @@ import { UsuariosService } from '../../usuarios.service';
 })
 export class UsuariosListaComponent implements OnInit {
 
-  usuarios: Usuario[] = [];
+  usuarios!: Usuario[];
 
   constructor( private service : UsuariosService, private router: Router) {
 
@@ -20,8 +20,8 @@ export class UsuariosListaComponent implements OnInit {
     this.service
       .getUsuarios()
       .subscribe( resposta => {
-        console.log(this.usuarios)
         this.usuarios = resposta;
+        console.log(this.usuarios);
     });
   }
 
